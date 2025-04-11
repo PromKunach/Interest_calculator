@@ -1,0 +1,848 @@
+body{
+  margin: 0;
+  height: 1500;
+  background-color: rgb(255, 255, 255);
+}
+
+@media (max-width:1358px){
+  .right{
+    width: 100% !important;
+  }
+  .rightup{
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+  }
+  .interest-info-container{
+    margin-top: 0px!important;
+    align-items: center;
+    justify-content: center ;
+  }
+  #detail-container{
+    width: 95% !important;
+    height: 40% !important;
+    background-color: white !important;
+    border-radius: 12px !important;
+    margin: auto !important;
+   overflow: hidden;
+
+  }
+  .sum{
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+   margin-left: 0px !important;
+   width: 90% !important;
+
+  }
+  .Result{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    
+   overflow: none !important;
+   padding-bottom:25px;
+  
+  }
+  .bank-container{
+    width: 90% !important;
+    height: 120px !important;
+    overflow: hidden;
+    margin-left:0px !important;
+  }
+  .bank-selector-list{
+    display: flex;
+    width: 2740px !important;
+  }
+  #list-cover{
+    width: 100%;
+    overflow: auto;
+  }
+  .bank-selector{
+    width: fit-content !important;
+    margin-right: 15px !important;
+    padding-right: 10px;
+  }
+  .bank-name{
+    margin-right: 5px !important;
+  }
+  #date-input-container{
+    display: flex;
+    flex-direction: column !important;
+    
+  }
+  .date-selector{
+    width: 80% !important;
+  }
+  #to-text{
+    margin: 5px !important;
+  }
+  #end-text{
+    margin: 5PX !important;
+  }
+}
+  
+
+
+
+@media (min-width:1358px){
+  .Result{
+    display: flex;
+
+
+  }
+
+}
+
+
+#date-input-container{
+  display: flex; 
+  flex-direction: row;
+}
+
+.Banner {
+  background: linear-gradient(to right, #7dd692 70%, #7dd692 );
+  height: 150px;  
+  display: flex;
+
+    
+  
+  align-items: center; /* Center vertically */
+  justify-content: flex-start;
+
+}
+.header-text{
+width: 100%;
+height: 100px;
+margin:0px ;
+margin-top: 30px;
+
+}
+.pw {
+  font-size: 2rem;
+  margin: 0; 
+  line-height: 0.7;
+  color: #07260e;
+}
+
+#engpw{
+  margin: 0;
+      padding: 0;
+      border: 0; 
+      font-size: 1.5rem;
+      color: #07260e;
+}
+
+
+#PI{
+ padding-top: 5px;
+ font-size: 2rem;
+ margin-bottom: 15px;
+ color: #07260e;
+}
+
+.Personal_info {
+  background-color: #E9F2F1;
+  margin: 25px ; 
+  border-radius: 12px;
+  padding-right: 0px;
+  width: 33%; 
+  box-sizing: border-box;
+ height:fit-content;
+ padding-left: 35px;
+ padding-bottom: 25px;
+}
+.pushable {
+position: relative;
+background: transparent;
+padding: 0px;
+border: none;
+cursor: pointer;
+outline-offset: 4px;
+outline-color: deeppink;
+transition: filter 250ms;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+margin-top: 25px;
+}
+
+.shadow {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: hsl(226, 25%, 69%);
+border-radius: 8px;
+filter: blur(2px);
+will-change: transform;
+transform: translateY(2px);
+transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+border-radius: 8px;
+background: linear-gradient(
+  to right,
+  rgb(9, 45, 40),
+  rgb(20, 82, 73) 8%,
+  rgb(20, 82, 73) 92%,
+  rgb(9, 45, 40) 100%
+);
+}
+
+.front {
+display: block;
+position: relative;
+border-radius: 8px;
+background: rgb(36, 100, 92);
+padding: 16px 32px;
+color: white;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+font-size: 1rem;
+transform: translateY(-4px);
+transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+filter: brightness(110%);
+}
+
+.pushable:hover .front {
+transform: translateY(-6px);
+transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+transform: translateY(-2px);
+transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+transform: translateY(4px);
+transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+transform: translateY(1px);
+transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+outline: none;
+}
+
+.Result{
+  margin: 25px ; 
+  margin-left: 10px;
+  border-radius: 12px;
+  background-color: #E9F2F1;
+  width: 70%;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition : all 1s ease ;
+  width: 0%;
+  height: fit-content;
+}
+
+#school_logo{
+scale: 0.7;
+margin: 0px;
+width: 100px;
+height:148.5px ;
+margin-right: 15px;
+margin-left: 15px;
+}
+
+#interest-sum-display{
+  font-size: 1.5rem;
+  color:  #07260e;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.container {
+  height: 1050px;
+  display: flex;
+  justify-content: center;
+}
+
+.sum{
+
+  margin: 25px;
+  padding: 50px;
+  padding-left: 0px;
+  padding-top: 15px;
+  background-color : rgb(190, 143, 88)  ;
+  border-radius: 12px;
+  padding-right: 0px;
+  padding-bottom: 100px;
+  width: 92%;
+  height: 135px;
+  content: '';
+  box-shadow: 15px 5px 0px -5px rgb(117, 76, 29);
+ z-index: 10;
+}
+.Bank-image {
+  position:absolute;
+  scale: 0.33;
+  top: 33px;
+  left: 1185px;
+  
+  transform-origin: left;
+ 
+}
+#Money-image{
+z-index: 3;
+transition: transform 0.2s ease-in-out;
+display: none;
+}
+#Money-image2{
+z-index: 2;
+transition: transform 0.23s ease-in-out;
+display: none;
+}
+#Money-image3{
+z-index: 1;
+transition: transform 0.26s ease-in-out;
+display: none;
+}
+.bank-container{
+margin: 25px;
+
+margin-right: 0px;
+
+padding: 50px;
+padding-left: 15px;
+padding-top: 15px;
+background-color : #ffffff;
+border-radius: 12px;
+
+padding-right: 15px;
+width: 40%;
+border: 1px solid rgba(255, 255, 255, 0.522);
+
+}
+#current-interest-display{
+
+font-size: 2rem;
+}
+.bank-showcase-text{
+color: #07260e;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+.new-line{
+background-color: #07260e;
+height: 1px;
+width: 100%;
+margin-top: 5px;
+margin-bottom: 15px;
+margin-top: 30px;
+}
+.bank-selector-list{
+
+width: 100%;
+height: 97%;
+margin: 0px;
+cursor: pointer;
+}
+.bank-selector{
+height: 56px;
+width: 100%;
+background-color: #ccdedc;
+
+border-radius: 32px;
+margin-bottom: 16px;
+display: flex;
+transition: transform 0.15s ease-out ,background-color 0.2s ease; 
+
+}
+.bank-selector:hover {
+transform: scale(1.1);
+}
+
+#krungthai-logo{
+scale: 1.1;
+margin: 0;
+margin-right: 5px;
+}
+
+#BAAC-name{
+margin-top: 8px;
+
+}
+.bank-name {
+color: #07260e;
+transition: color 0.15s ease;
+margin-left: 5px;
+}
+
+#result{
+  margin: 25px ; 
+  margin-left: 10px;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+   
+      
+     
+}
+
+.line{
+margin-top: 5px;
+  background-color: rgb(196, 149, 95);
+  height: 5px;
+  width: 100%;
+  border-top: dashed rgb(131, 88, 38);
+
+}
+#insum{
+margin-left: 15px;color: rgb(117, 76, 29);
+}
+.indisplay{
+  width: 320px;
+margin-left: 15px;
+margin-top: 0px;
+font-size: 2rem;
+line-height: 30px;
+color: rgb(117, 76, 29);
+}
+.result_text_div{
+  width: 320px;
+   color: rgb(237, 248, 240);
+  margin-left: 15px;
+  font-size: 56px; 
+  line-height: 1;
+
+}
+#sumtext{
+margin-left: 15px;
+}
+.result_text{
+ margin-left: 15px;
+ color: rgb(237, 248, 240);
+}
+
+.result_text_info{
+  color:  rgb(237, 248, 240);
+  margin: 0;
+
+}   
+
+
+
+.right{
+width: 70%  ;
+
+
+
+
+}
+.rightup{
+
+display: flex;
+
+
+}
+
+
+
+#to{
+  margin-left: 5px;
+  ;
+}
+#date-1{
+  font-style: italic  ;
+}
+#date-2{
+  margin-left: 5px;
+  font-style: italic  ;
+}
+.date-container{
+  
+  display: flex;
+  width: 100%;
+  
+  padding-top: 10px;
+  padding-left: 10px;
+}
+#months{
+  font-style: italic;
+}
+#req-per{
+line-height: 20px;
+}
+#req-age{
+line-height: normal;
+}
+.interest-info-container {
+  margin-top: 25px;
+ width: 100%;
+
+ 
+ height: 34.5%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center ;
+ align-items: center;
+}
+
+.result_text_info {
+color: #24645c;
+}
+#interest-info-text{
+margin-top: 30px;
+}
+.date-block{
+  background-color: #ccdedc;
+  border-radius: 12px;
+  height: 110.67px;
+  width: 89%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.522);
+}
+.interest-percent{
+margin-bottom: 25px;
+background-color: #24645c;
+border-radius: 12px;
+height: 110.61px;
+width: 89%;
+display: flex;
+
+border: 1px solid rgba(255, 255, 255, 0.522);
+justify-content: right;
+align-items: center;
+
+}
+#interest-rate{
+
+
+font-size: 3rem;
+margin-top: 0px;
+color: #ccdedc;
+
+line-height: 5px;
+margin-top: 20px;
+direction: rtl;
+
+
+}
+#hundred{
+font-size: 1rem;
+margin-top: 0px;
+color: #ccdedc;
+margin-left: 10px;
+direction: rtl;
+margin-top: 20px;
+}
+.interest-text-continer{
+width: 292.97px;
+}
+#flowercoint{
+font-size: 1rem;
+margin: 0;
+padding: 0;
+margin-top: 25px;
+}
+#percent{
+scale: 1;
+height: 70px;
+width: 70px;
+margin-left: 20px;
+margin-right: 20px;
+
+
+}
+
+#percent-info-text{
+color: #ccdedc;
+}
+
+#THB{
+color: white;
+margin-left: 15px;
+}
+#THB2{
+color: rgb(117, 76, 29);
+margin-left: 15px;
+}
+#clock{
+scale: 0.7;
+width: 100px;
+height: 100px;
+}
+
+
+.range-div{
+  background-color: white;
+  width: 70%;
+  margin: 0px;
+  height: 30%;
+  
+}
+
+#req-header{
+margin: 0px;
+font-size: clamp(1rem, -0.2692rem + 2.0513vw, 1.5rem);
+margin-top: 15px;
+}
+.req-text{
+margin: 0px;
+color: rgb(7, 38, 14);
+line-height: 40px;
+
+}
+#req-header-name{
+font-size: clamp(1rem, -0.1538rem + 3.0769vw, 2.5rem);
+flex: 1;
+word-break: break-word;
+}
+#detail-container{
+width: 94%;
+height: 67.5%;
+background-color: white;
+border-radius: 12px;
+margin: auto;
+overflow: auto;
+
+}
+#req-header-container{
+display: flex;
+height: 150px;
+}
+
+#extra-info{
+margin-top:15px ;
+margin-right: 15px;
+width: 96%;
+height: 225px;
+background-color: #ffffff;
+padding-top: 0;
+padding-right: 30px;
+overflow-y: auto;
+overflow-wrap:anywhere;
+}
+
+#detail{
+margin-left: 30px;
+font-size: 1.2rem;
+margin-top: 0px;
+white-space: pre-wrap;
+}
+
+#detail-header{
+margin: 15px;
+margin-bottom: 0px;
+
+font-size: 1.5rem;
+}
+#uni-bank-image{
+scale: 1;
+margin: 15px;
+margin-top: 0;
+margin-bottom: 0px;
+}
+#req-line{
+background-color: #e2e2e2;
+height: 3px;
+width: 95%;
+margin-left: auto;
+margin-right: auto;
+}
+#req{
+margin: 15px;
+margin-bottom: 0px;
+font-size: 1.5rem;
+}
+#tick{
+scale: 0.7;
+margin-top: 5px;
+}
+#tick2{
+scale: 0.7;
+margin-top: 5px;
+}
+.req-line{
+display: flex;
+height: 30px;
+
+}
+.req-p{
+margin-left: 30px;
+font-size: 1.2rem;
+}
+.styled-select {        
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  appearance: none; 
+  
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  width: 90%;
+  height: 50px;
+ 
+}
+
+.styled-select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.styled-select option {
+  padding: 10px;
+}
+
+
+
+
+.stars{
+  color: red;
+}
+#range{
+  line-height: 20px;
+   font-size: 1.2rem;
+}
+.date-input-container{
+  display: flex;
+  flex-direction: row;
+}
+.date-selector{
+  width: 30%;
+  align-self: center;
+}
+
+
+#end-date{
+ 
+  align-self: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+#start-date{
+
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+.kanit-regular {
+  font-family: "Kanit", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.kanit-bold {
+  font-family: "Kanit", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.im-fell-english-regular {
+  font-family: "IM Fell English", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.im-fell-english-regular-italic {
+  font-family: "IM Fell English", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.kanit-regular-italic {
+  font-family: "Kanit", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* The container for the custom styled checkbox */
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 8px;
+}
+
+/* The styled "checkbox" */
+.custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  border-radius: 4px; /* Add this for rounded corners */
+  margin-right: 8px;
+  transition: background-color 0.07s, border-color 0.07s;
+}
+
+/* Change the checkbox when checked */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* Add a checkmark (optional) */
+.custom-checkbox .checkmark::after {
+  content: '';
+  display: none;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-left: 6px;
+  margin-top: 3px;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
+}
+
+* {
+outline: none;
+}
+
+button, input, a {
+outline: none;
+}
+
+button:focus, input:focus, a:focus {
+outline: none;
+box-shadow: 0 0 3px #007bff; /* Add a custom focus indicator */
+}
+
+
+.no-caret {
+user-select: none;
+}

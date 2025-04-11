@@ -1,0 +1,232 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>โปรเเกรมคำนวณอัตราดอกเบี้ยเงินฝาก</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+    <div class="Banner no-caret">
+        <img src="images/school_logo.png" alt="" id="school_logo" >
+        <div class="header-text" >
+             <h1 class="kanit-bold pw">โปรเเกรมคำนวณอัตราดอกเบี้ยเงินฝาก 
+        </h1>
+        <p class="kanit-regular" id="engpw">โรงเรียนประจวบวิทยาลัย</p>
+        </div>
+       
+    </div> 
+    <div class="container kanit-bold ">
+        <section class="Personal_info">
+            <h2 id="PI">ข้อมูลส่วนบุคคล</h2>
+            <div class="select-field kanit-regular">
+                <h3 class="pi-header" id="person-type-header">ประเภทบุคคล <span class="stars">*</span></h3>
+                <div class="custom-select">
+                    <select id="person-type" class="kanit-regular styled-select req-select">
+                       
+                      
+                        <option value="บุคคลธรรมดา">1. บุคคลธรรมดา</option>
+                        <option value="นิติบุคคล"disabled selected hidden>2. นิติบุคคล</option>
+                        <option value="นิติบุคคลไม่เเสวงหาผลประโยชน์"disabled selected hidden>3. นิติบุคคลไม่เเสวงหาผลประโยชน์</option>
+                        <option value="ราชการ"disabled selected hidden>4. ราชการ</option>
+                        <option value="รัฐวิสาหกิจ"disabled selected hidden>5. รัฐวิสาหกิจ</option>
+                        <option value="สถาบันการเงิน"disabled selected hidden>6. สถาบันการเงิน</option>
+                        <option value="กองทุนเเละบริษัท"disabled selected hidden>7. กองทุนเเละบริษัท</option>
+                     <option value="" class="selector-placeheader"  disabled selected hidden>กรุณาเลือกประเภทบุคคลของผู้ฝาก</option>
+                        <option value="เกษตรกร">2. เกษตรกร</option>
+                    </select>
+                  </div>
+                  <h3 class="pi-header " id="age">อายุผู้ฝาก (ปี) <span class="stars">*</span></h3>
+                  <input class="styled-select kanit-regular req-select" type="tel" id="age-input" placeholder="กรุณาใส่อายุผู้ฝาก" oninput="validateInteger(this)">
+                <h3 class="pi-header" id="deposit-type-header">ประเภทการฝาก  <span class="stars">*</span></h3>
+                <select id="banking-type" class="kanit-regular styled-select req-select">
+                    <option value="" class="selector-placeheader"  disabled selected hidden>กรุณาเลือกประเภทการฝาก</option>
+                    <option value="saving">1. ฝากออมทรัพย์</option>
+                    <option value="fix" >2. ฝากประจำ</option>
+                </select>
+                
+                    <h3 class="pi-header" id="date-input">เลือกวันที่ฝาก <span class="stars">*</span></h3>
+                <div class="date-input-container" id="date-input-container">
+                    <h4 id="to-text">เริ่ม</h4>
+                    <input min="2000-00-01" max="3000-31-12" class="styled-select date-selector kanit-regular saving-select fix-select" type="date" id="start-date" name="start-date">
+                    <h4 id="end-text">สิ้นสุด</h4>
+                    <input min="2000-00-01" max="3000-31-12" class="styled-select date-selector kanit-regular saving-select" type="date" id="end-date" name="end-date">
+                </div>
+                <h3 class="pi-header " id="range-select-header">เลือกระยะเวลาการฝาก <span class="stars">*</span></h3>
+                <h3 class="pi-header " id="range-select-month-header">ระบุระยะเวลาการฝาก <span class="stars"> (เดือน)*</span></h3>
+                <select id="range-selector" class="kanit-regular styled-select fix-select">
+                    <option value="" class="selector-placeheader"  disabled selected hidden>กรุณาเลือกระยะเวลาการฝาก</option>
+                    <option value="3">3 เดือน</option>
+                    <option value="6">6 เดือน</option>
+                    <option value="12">12 เดือน</option>
+                    <option value="24">24 เดือน</option>
+                </select>
+                <input class="styled-select kanit-regular " type="tel" id="month-input" placeholder="กรุณาใส่ระยะเวลาการฝาก" oninput="validateInteger(this)">
+                <h3 class="pi-header " id="original-fund">เงินต้น (บาท) <span class="stars">*</span></h3>
+                <input class="styled-select kanit-regular req-select" type="tel" id="intInput" placeholder="กรุณาใส่จำนวนเงินต้นสำหรับการฝาก" oninput="validateInteger(this)">
+                <button class="pushable kanit-regular" onclick="final_process()">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"> ตกลง </span>
+                  </button>
+                 
+                  
+                
+                
+                  <p id="status-text"></p>
+                  <label class="custom-checkbox">
+                     <input id="checkingbox" type="checkbox" />
+                    <span class="checkmark no-caret">
+                       
+                    </span>
+                    
+                      รีเฟรชผลลัพธ์อัตโนมัติ
+                  </label>
+                 
+            </div>
+           
+        </section>
+
+        <section class="Result" id="Result_box">
+            <div class="bank-container">
+                <h3 class="bank-showcase-text" id="">ธนาคารตัวเลือก</h3>
+            <div id="list-cover">
+                <div class="bank-selector-list">
+                    <div id="กรุงไทย" class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)"  >
+                        <img id="krungthai-logo" src="images/krungthai-logo.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารกรุงไทย</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular " onclick="scaleDown(this,0)" id="ไทยพาณิชย์">
+                        <img id="krungthai-logo" src="images/dpa_bank_sb@2x.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารไทยพาณิชย์</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="กรุงเทพ">
+                        <img id="krungthai-logo" src="images/bkk.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารกรุงเทพ</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="กรุงศรีอยุธยา">
+                        <img id="krungthai-logo" src="images/Ayuthaya.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารอยุธยา</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="กสิกรไทย">
+                        <img id="krungthai-logo" src="images/KBANK.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารกสิกรไทย</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,1)" id="ธกส.">
+                        <img id="krungthai-logo" src="images/BAAC.png" alt="symbol"> 
+                        <p class="bank-name" id="BAAC-name">ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="ทหารไทยธนชาต">
+                        <img id="krungthai-logo" src="images/TTB.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารไทยธนชาต</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,1)" id="ออมสิน">
+                        <img id="krungthai-logo" src="images/GSB.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารออมสิน</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="ยูโอบี">
+                        <img id="krungthai-logo" src="images/UOB.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารยูโอบี</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="ซีไอเอ็มบี ไทย">
+                        <img id="krungthai-logo" src="images/CIMB.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารซีไอเอ็มบี ไทย</p>
+                    </div>
+                    
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="เกียรตินาคินภัทร">
+                        <img id="krungthai-logo" src="images/kiatti.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารเกียรตินาคินภัทร</p>
+                    </div>
+                    <div class="bank-selector bank-showcase-text kanit-regular" onclick="scaleDown(this,0)" id="แลนด์ แอนด์ เฮ้าส์ ">
+                        <img id="krungthai-logo" src="images/LnH.png" alt="symbol"> 
+                        <p class="bank-name">ธนาคารแลนด์ แอนด์ เฮ้าส์</p>
+                    </div>
+                </div>
+            </div>   
+            </div>
+            <div class="right">
+                <div class="rightup">
+            <div class="sum">
+                <h3 class="kanit-bold result_text" id="sumtext">ยอดรวม</h3>
+                <div class= "result_text_div" id="sum-display">
+                   00.00 
+                </div>
+                <p id="THB" class="result_text_info">THB</p> 
+                <div class="line"></div>
+                <h3 class="kanit-bold result_text" id="insum">ดอกเบี้ยที่ได้รับ</h3>
+                <div class= "indisplay" id="in-display">
+                    00.00 
+                 </div>
+                 <p id="THB2" class="result_text_info">THB</p> 
+            </div>
+            <div class="interest-info-container">  
+                <div class="interest-percent">
+                    <div class="interest-text-continer">
+                        <p id="hundred">อัตราดอกเบี้ย <span id="bank-name-value">: ธนาคารกรุงไทย</span></p>
+                        <p  id="interest-rate" class="">0.125</p>
+                    </div>
+                    <img id="percent" src="images/Percent.png" alt="symbol"> 
+                    
+                 
+                </div>
+               <div class="date-block">
+                <img id="clock" src="images/clock.png" alt="symbol"> 
+                <div id="interest-info-text" >
+                    <p class="result_text_info kanit-bold" id="range"> ระยะเวลาทั้งสิ้น <span id="months" class="kanit-bold">xxxx</span> วัน</p>
+                    <p class="result_text_info kanit-regular"><span id="date-1">08/6/2952 </span> <span class="result_text_info kanit-regular" id="to">ถึง</span> <span class="result_text_info kanit-regular" id="date-2">08/12/2953</span></p>
+                </div>
+               
+            </div>
+        </div>
+        </div>
+        <div   id="detail-container">
+            <div id="req-header-container">
+                <img id="uni-bank-image" src="images/BAAC.png" alt="symbol"> 
+                
+            <div  id="req-list">
+                <h3 class="req-text kanit-regular" id="req-header">ข้อมูลเกี่ยวกับ </h3>
+                <h3 class="req-text" id="req-header-name">ธนาคารกสิกรไทย </h3>
+            </div>
+
+            </div>
+            <div class="new-line" id="req-line" ></div>
+            <h3 class="req-text " id="req">เงื่อนไขการเปิดบัญชี</h3>
+            <div class="req-line">
+                <p class="req-text req-p kanit-regular" >จำนวนเงินฝากขั้นต่ำหรับการเปิดบัญชี <span id="req-amount " class="kanit-bold">10000 </span> บาท</p>
+                <img id="tick" src="images/Tick.png" alt="symbol"> 
+            </div>
+            <div class="req-line">
+                <p class="req-text req-p kanit-regular" id="req-age" >อายุขั้นต่ำหรับการเปิดบัญชี <span id="age-amount " class="kanit-bold">20 </span> ปี</p>
+                <img id="tick2" src="images/Tack.png" alt="symbol"> 
+            </div>
+            <div class="new-line" id="req-line" ></div>
+            <h3 id="detail-header">ข้อมูลเเละเงื่อนไขเพิ่มเติม</h3>
+            <div id="extra-info">
+                
+                <p   class="kanit-regular" id="detail">
+                  
+                </p>
+
+            </div>
+            
+            
+        </div>
+        <img src="images/Money.png" alt="" id="Money-image" class="Bank-image">
+        <img src="images/Money2.png" alt="" id="Money-image2" class="Bank-image">
+        <img src="images/Money3.png" alt="" id="Money-image3" class="Bank-image">
+
+    </div>
+        </section>
+    </div>  
+    <div class="container">
+      </div>
+    <script src="script.js"></script>   
+
+
+    </body>
+    
+</html>
