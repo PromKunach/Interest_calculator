@@ -1,10 +1,61 @@
 body{
   margin: 0;
-  height: 1500;
+  height: fit-content !important;
   background-color: rgb(255, 255, 255);
+  padding-bottom: 25px;
 }
 
+
+
+@media (max-width:779.5px){
+  
+  .container{
+    height: fit-content !important;
+    flex-direction: column;
+  }
+  .Personal_info{
+    width: 92% !important;
+    margin-left: 4% !important;
+    margin-bottom: 0px !important;
+  }
+  .Result{
+    margin-left: 4% !important;
+  }
+  .bank-container{
+    width: 70% !important;
+    
+  
+  }
+  .req-p{
+    font-size: 0.9rem !important;
+    margin-left: 15px !important;
+  }
+  .pw{
+    font-size: 1.3rem !important;
+    line-height: 25px !important;
+  }
+  #engpw{
+    font-size: 1rem !important;
+
+  }
+  .result_text_div{
+    width: 70% !important;
+  }
+  .indisplay{
+    width: 70% !important;
+  }
+}
+
+
+
+
+
+
 @media (max-width:1358px){
+  #result_header_div{
+    display: flex !important;
+    width: 100%;
+  }
   .right{
     width: 100% !important;
   }
@@ -25,6 +76,7 @@ body{
     border-radius: 12px !important;
     margin: auto !important;
    overflow: hidden;
+   padding-top: 25px;
 
   }
   .sum{
@@ -44,21 +96,21 @@ body{
   
   }
   .bank-container{
-    width: 90% !important;
+    width: 88% !important;
     height: 120px !important;
     overflow: hidden;
     margin-left:0px !important;
   }
   .bank-selector-list{
     display: flex;
-    width: 2740px !important;
+    width: 4500px !important;
   }
   #list-cover{
     width: 100%;
     overflow: auto;
   }
   .bank-selector{
-    width: fit-content !important;
+    width: 400px !important;
     margin-right: 15px !important;
     padding-right: 10px;
   }
@@ -250,6 +302,19 @@ outline: none;
   height: fit-content;
 }
 
+#result_header{
+  padding-top: 5px;
+ font-size: 2rem;
+ color: #07260e;
+ margin-left: 25px;
+ margin-bottom: 0px;
+}
+#result_header_div{
+  display: flex;
+  width: 100%;
+  display: none;
+}
+
 #school_logo{
 scale: 0.7;
 margin: 0px;
@@ -336,6 +401,13 @@ font-size: 2rem;
 color: #07260e;
 margin-top: 5px;
 margin-bottom: 5px;
+
+}
+#bank-showcase-header{
+  color: #07260e;
+margin-top: 5px;
+margin-bottom: 15px;
+margin-left: 15px;
 }
 .new-line{
 background-color: #07260e;
@@ -414,7 +486,7 @@ line-height: 30px;
 color: rgb(117, 76, 29);
 }
 .result_text_div{
-  width: 320px;
+  width: 320px ;
    color: rgb(237, 248, 240);
   margin-left: 15px;
   font-size: 56px; 
@@ -606,6 +678,7 @@ flex: 1;
 word-break: break-word;
 }
 #detail-container{
+  padding-top: 20px;
 width: 94%;
 height: 67.5%;
 background-color: white;
@@ -677,7 +750,8 @@ height: 30px;
 }
 .req-p{
 margin-left: 30px;
-font-size: 1.2rem;
+font-size: 1.5rem;
+width: fit-content;
 }
 .styled-select {        
   width: 200px;

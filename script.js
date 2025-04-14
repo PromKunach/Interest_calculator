@@ -1,6 +1,5 @@
 
 
-
 function validateInteger(input) {
     // Replace non-numeric characters (except for negative sign) with an empty string
     input.value = input.value.replace(/[^0-9\-]/g, '');
@@ -648,6 +647,13 @@ in_display.textContent = comma_text(in_display.textContent);
     change_color();
 }
 
+function resizeText(){
+    const textContainer = document.querySelector('.result_text_div');
+    const textContainer2 = document.querySelector('.indisplay');
+
+    resizeTextToFit(textContainer);
+    resizeTextToFit2    (textContainer2);
+}
 
 
 
@@ -918,12 +924,22 @@ let fix_interest_24_max =Interest_array["fix_interest_24_max"];
 
 function expand(){
     const content = document.querySelector(".Result");
-
-    if (content.style.height === "0px" || content.style.height === "") {
-        // Calculate the full height of the content
-        content.style.width = "70%";
+    let target;
+    if(screen.width >= 779){
+        target = "70%";
+        console.log(target);
+        content.style.width = target;
 
     }
+    else if(screen.width < 779.6) {
+        target = "92%";
+        console.log(target);
+        content.style.width = target;
+
+    }
+    
+
+  
        
    
 }
@@ -1443,3 +1459,25 @@ window.addEventListener('resize', () => {
     resizeTextToFit2(textContainer2);
   }
 });
+
+const target = document.getElementById("Result_box");
+
+const observer = new ResizeObserver(entries => {
+  for (let entry of entries) {
+    const width = entry.contentRect.width;
+    const height = entry.contentRect.height;
+    if(Math.floor(width) == Math.floor(screen.width*0.92)){
+        resizeText();
+    }
+  }
+});
+
+observer.observe(target);
+
+window.addEventListener('resize', () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+        expand();
+        resizeText();
+   
+  });
