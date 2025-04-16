@@ -131,6 +131,10 @@ body{
   #end-text{
     margin: 5PX !important;
   }
+  .req-p{
+    font-size: 1.2rem !important;
+    margin-left: 25px !important;
+  }
 }
   
 
